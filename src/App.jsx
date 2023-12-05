@@ -11,6 +11,8 @@ function App() {
     duration: 10
   });
 
+  const inputIsValid = userData.duration >= 1;
+
   function handleChange(inputIdentifier, newValue) {
     setUserData(prevUserData => {
       return {
@@ -21,12 +23,15 @@ function App() {
     });
   }
 
+
   return (
     <>
       <UserInput onTest={handleChange} userData={userData} />
-      <Results userData={userData} />
+      {!inputIsValid ? <p className="center">Please enter a duration greater than zero.</p> : undefined }
+      {inputIsValid ? <Results userData={userData} /> : undefined}
+
     </>
-  )
-}
+  );
+};
 
 export default App;

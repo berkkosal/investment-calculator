@@ -15,7 +15,7 @@ function App() {
     setUserData(prevUserData => {
       return {
         ...prevUserData,
-        [inputIdentifier]: newValue
+        [inputIdentifier]: +newValue //Buradaki + hesaplamadaki string ifadeyi number'a dönüştürüyor
 
       };
     });

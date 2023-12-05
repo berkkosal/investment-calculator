@@ -14,6 +14,8 @@ export default function UserInput({onTest, userData}) {
                         value={userData.initialInvestment}
                         onChange={
                             (event) => onTest('initialInvestment', event.target.value)
+                            //event.target.value bu yazımda her zaman bir string döndürüyor JS'de.
+                            //type ="number" olarak belirtsek dahi etki etmiyor.
                         }
                     />
                 </p>

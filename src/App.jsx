@@ -1,7 +1,12 @@
+import Results from "./components/Results"
+import UserInput from "./components/UserInput"
+
 function App() {
   return (
-    ""
+    <>
+      <UserInput/>
+    </>
   )
 }
 
-export default App
+export default App;

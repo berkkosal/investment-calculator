@@ -1,26 +1,8 @@
 
 
-export default function Results() {
+export default function Results({ userData }) {
+  console.log(userData);
   return (
-    <table id="result">
-      <thead>
-        ALOOO
-      </thead>
-      <tbody>
-        ALOOO
-        ALOOO
-        ALOOO
-
-      </tbody>
-      <thead>
-        ALOOO
-      </thead>
-      <tbody>
-        ALOOO
-        ALOOO
-        ALOOO
-
-      </tbody>
-    </table>
-  )
+    <p>Results.</p>
+  );
 }

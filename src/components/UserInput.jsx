@@ -1,23 +1,6 @@
 import { useState } from "react"
 
-export default function UserInput() {
-
-    const [userInput, setUserInput] = useState({
-        initialInvestment: 10000,
-        annualInvestment: 1200,
-        expectedReturn: 6,
-        duration: 10
-    });
-
-    function handleChange(inputIdentifier, newValue) {
-        setUserInput(prevUserInput => {
-            return {
-                ...prevUserInput,
-                [inputIdentifier]: newValue
-
-            };
-        });
-    }
+export default function UserInput({onTest, userData}) {
 
     return (
 
@@ -28,9 +11,9 @@ export default function UserInput() {
                     <input
                         type="number"
                         required
-                        value={userInput.initialInvestment}
+                        value={userData.initialInvestment}
                         onChange={
-                            (event) => handleChange('initialInvestment', event.target.value)
+                            (event) => onTest('initialInvestment', event.target.value)
                         }
                     />
                 </p>
@@ -39,9 +22,9 @@ export default function UserInput() {
                     <input
                         type="number"
                         required
-                        value={userInput.annualInvestment}
+                        value={userData.annualInvestment}
                         onChange={
-                            (event) => handleChange('annualInvestment', event.target.value)
+                            (event) => onTest('annualInvestment', event.target.value)
                         }
                     />
                 </p>
@@ -52,9 +35,9 @@ export default function UserInput() {
                     <input
                         type="number"
                         required
-                        value={userInput.expectedReturn}
+                        value={userData.expectedReturn}
                         onChange={
-                            (event) => handleChange('expectedReturn', event.target.value)
+                            (event) => onTest('expectedReturn', event.target.value)
                         }
                     />
 
@@ -64,9 +47,9 @@ export default function UserInput() {
                     <input
                         type="number"
                         required
-                        value={userInput.duration}
+                        value={userData.duration}
                         onChange={
-                            (event) => handleChange('duration', event.target.value)
+                            (event) => onTest('duration', event.target.value)
                         }
                     />
                 </p>
